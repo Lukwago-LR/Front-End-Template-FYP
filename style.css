@@ -1,5 +1,5 @@
 body {
-    min-height: 120vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@ body {
 
 section {
     height: 1020px;
-    width: 1000px;
+    width: 1024px;
     border: 1px solid #ccc;
     border-radius: 30px;
     overflow-y: hidden;
@@ -43,8 +43,8 @@ main {
     margin: 20px;
 
     .button {
-        height: 180px;
-        width: 120px;
+        height: 100px;
+        width: 90px;
         padding: 15px;
         border-radius: 10px;
         background-color: white;
