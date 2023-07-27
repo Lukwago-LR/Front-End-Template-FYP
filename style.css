@@ -1,12 +1,12 @@
 body {
-    min-height: 100vh;
+    min-height: 180vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 section {
-    height: 1020px;
+    height: 1220px;
     width: 1024px;
     border: 1px solid #ccc;
     border-radius: 30px;
