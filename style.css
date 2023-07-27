@@ -1,13 +1,9 @@
 body {
-    min-height: auto;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 section {
-    height: auto;
-    width: auto; 
     border: 1px solid #ccc;
     border-radius: 30px;
     overflow-y: hidden;
@@ -43,8 +39,8 @@ main {
     margin: 20px;
 
     .button {
-        height: 100px;
-        width: 90px;
+        height: 500px;
+        width: 400px;
         padding: 15px;
         border-radius: 10px;
         background-color: white;
