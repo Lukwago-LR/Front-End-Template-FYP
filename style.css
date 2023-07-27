@@ -37,7 +37,9 @@ main {
     border-radius: 30px;
     min-height: 100px;
     margin: 20px;
+    text-align: center;
 
+   
     .button {
         height: 500px;
         width: 400px;
@@ -58,6 +60,7 @@ main {
     .hospitals {
         padding: 15px;
         align-items: center;
+        text-align: center;
 
         h2 {
             font-size: 1.5rem;
@@ -69,12 +72,8 @@ main {
             border-radius: 10px;
             padding: 15px;
             background: white;
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
         }
-    }
-
-    .logo{
-        text-align: center;
     }
 
     .title {
