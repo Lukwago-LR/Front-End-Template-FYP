@@ -24,13 +24,17 @@
         <div class="row mainlogin">
             <div class="col-md-12">
                 <p class="sign">Sign in</p>
-                <form class="form1">
-                    <input class="un " type="text" text-align="center" placeholder="Username">
-                    <input class="pass" type="password" text-align="center" placeholder="Password">
-                    <button @click="authentication" class="submit" text-align="center">Sign in</button>
-                    <p class="forgot"><button>Forgot Password?</button></p>
+                <form x-on:submit.prevent="this.username, this.password" class="form">
+                    <input class="un " type="text" text-align="center" x-model="username" placeholder="Username">
+                    <input class="pass" type="password" text-align="center" x-model="password" placeholder="Password">
+                    <br>
+                    <button type="submit" @click="authentication" class="submit" text-align="center">Sign in</button>
+                    <br>
+                    <button type="submit" class="forgot" text-align="center">Forgot Password?</button>
                 </form>
             </div>
+          
+        </div>
         </div>
     </section>
 
@@ -46,46 +50,46 @@
         <main>
             <div class="row">
                 <div class="col-xs-6 col-md-3">
-                    <button @click="openAccount">
+                    <button type="submit" @click="openAccount">
                         <img class="button" src="images/account.jpg" alt="account">
                         <p>Account</p>
                     </button>
-                   
+
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <button @click="openClassification">
+                    <button type="submit" @click="openClassification">
                         <img class="button" src="images/classification.jpeg" alt="classification">
                         <p>Classification</p>
                     </button>
-                   
+
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <button @click="openSegmentation">
-                        <img class="button" src="images/segmentation.jpeg">
+                    <button type="submit" @click="openSegmentation">
+                        <img class="button" src="images/segmentation.jpeg" alt="segmentation">
                         <p>Segmentation</p>
                     </button>
-                   
+
                 </div>
 
                 <div class="col-xs-6 col-md-3">
-                    <button @click="open3D">
+                    <button type="submit" @click="open3D">
                         <img class="button" src="images/3D.png" alt="3D">
                         <p>3D Imaging</p>
-                    </button>                   
+                    </button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6">                    
-                    <button @click="openInformation">
+                <div class="col-xs-6">
+                    <button type="submit" @click="openInformation">
                         <img class="button" src="images/info.jpeg" alt="info">
                         <p>Information</p>
                     </button>
                 </div>
                 <div class="col-xs-6">
-                    <button @click="openAugmentation">
+                    <button type="submit" @click="openAugmentation">
                         <img class="button" src="images/augmented.jpg" alt="augmented">
                         <p>Augmented Reality</p>
-                    </button>                   
+                    </button>
                 </div>
             </div>
 
@@ -133,40 +137,40 @@
 
     </section>
 
-     <!-- section for user account -->
-     <section x-show="login&&account">
+    <!-- section for user account -->
+    <section x-show="login&&account">
         <h2>Your Profile</h2>
-        <button @click="openHome('account')">Home</button>
-     </section>
+        <button type="submit" @click="openHome('account')">Home</button>
+    </section>
 
     <!-- section for image classification -->
     <section x-show="login&&classification">
         <h2>Classification</h2>
-        <button @click="openHome('classification')">Home</button>
+        <button type="submit" @click="openHome('classification')">Home</button>
     </section>
 
     <!-- section for image segmentation-->
     <section x-show="login&&segmentation">
         <h2>Segmentation</h2>
-        <button @click="openHome('segmentation')">Home</button>
+        <button type="submit" @click="openHome('segmentation')">Home</button>
     </section>
 
     <!-- section for 3D Imaging-->
     <section x-show="login&&image3D">
         <h2>3D Imaging</h2>
-        <button @click="openHome('image3D')">Home</button>
+        <button type="submit" @click="openHome('image3D')">Home</button>
     </section>
 
     <!-- section for Information-->
     <section x-show="login&&information">
         <h2>Extra Information</h2>
-        <button @click="openHome('information')">Home</button>
+        <button type="submit" @click="openHome('information')">Home</button>
     </section>
 
     <!-- section for Augmented Reality -->
     <section x-show="login&&augmentation">
         <h2>Augmented Reality Concepts</h2>
-        <button @click="openHome('augmentation')">Home</button>
+        <button type="submit" @click="openHome('augmentation')">Home</button>
     </section>
 
 </body>

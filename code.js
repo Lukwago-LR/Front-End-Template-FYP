@@ -17,8 +17,10 @@ function mainFunction() {
             this.login = true;
             this.logout = false;
 
-            this.username = localStorage['username']
-            this.password = localStorage['password']
+            localStorage['username'] = this.username;
+            localStorage['password'] = this.password;
+            localStorage['login'] = this.login;
+            localStorage['logout'] = this.logout;            
         },
 
         openAccount() {
