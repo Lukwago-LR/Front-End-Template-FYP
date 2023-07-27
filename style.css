@@ -1,0 +1,95 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    height: 1020px;
+    width: 480px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    overflow-y: hidden;
+
+    &:hover {
+        overflow-y: scroll;
+    }
+}
+
+header {
+    padding: 30px;
+    padding-top: 45px;
+    padding-bottom: 0px;
+}
+
+.menu {
+    display: block;
+    background-color: #F7F7F7;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding: 0.5em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: #f2f4f5 solid;
+    border-radius: 30px;
+}
+
+main {
+    background: lightgray;
+    border-radius: 30px;
+    min-height: 100px;
+    margin: 20px;
+
+    .button {
+        height: 100px;
+        width: 90px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: white;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-xs-4 {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hospitals {
+        padding: 15px;
+        align-items: center;
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #3E3049;
+        }
+
+        .hospital {
+            border-radius: 10px;
+            padding: 15px;
+            background: white;
+            margin-bottom: 20px; 
+        }
+    }
+
+    .logo{
+        text-align: center;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .location {
+        color: #665E77;
+    }
+
+    .consult {
+        color: #7358D4;
+    }
+}
