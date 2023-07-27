@@ -1,6 +1,7 @@
 body {
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 section {
@@ -17,6 +18,10 @@ header {
     padding: 30px;
     padding-top: 0px;
     padding-bottom: 0px;
+
+    .banner{
+        border-radius: 30px;
+    }
 }
 
 .menu {
