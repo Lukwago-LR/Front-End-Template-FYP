@@ -1,5 +1,5 @@
 body {
-    min-height: 150vh;
+    min-height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@ body {
 
 section {
     height: 1020px;
-    width: 600px;
+    width: 1000px;
     border: 1px solid #ccc;
     border-radius: 30px;
     overflow-y: hidden;
