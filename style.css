@@ -1,13 +1,13 @@
 body {
-    min-height: 180vh;
+    min-height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 section {
-    height: 2220px;
-    width: 1024px;
+    height: auto;
+    width: auto; 
     border: 1px solid #ccc;
     border-radius: 30px;
     overflow-y: hidden;
