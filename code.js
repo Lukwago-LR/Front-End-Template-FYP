@@ -12,15 +12,19 @@ function mainFunction() {
         information: false,
         augmentation: false,
         homePage: true,
+        toggle:false,
+
+        LoggingOut(){
+            this.logout = true;
+            this.login = false;
+        },
 
         authentication() {
             this.login = true;
             this.logout = false;
 
             localStorage['username'] = this.username;
-            localStorage['password'] = this.password;
-            localStorage['login'] = this.login;
-            localStorage['logout'] = this.logout;            
+            localStorage['password'] = this.password;          
         },
 
         openAccount() {
