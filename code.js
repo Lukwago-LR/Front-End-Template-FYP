@@ -1,4 +1,4 @@
-function mainFunction() {
+function AlpineMainFunction() {
 
     return {
         username: "",
@@ -12,9 +12,10 @@ function mainFunction() {
         information: false,
         augmentation: false,
         homePage: true,
-        toggle:false,
+        toggle: false,
+        camera:false,
 
-        LoggingOut(){
+        LoggingOut() {
             this.logout = true;
             this.login = false;
         },
@@ -24,7 +25,7 @@ function mainFunction() {
             this.logout = false;
 
             localStorage['username'] = this.username;
-            localStorage['password'] = this.password;          
+            localStorage['password'] = this.password;
         },
 
         openAccount() {
@@ -45,7 +46,11 @@ function mainFunction() {
         open3D() {
             this.image3D = true;
             this.closeSection('image3D');
+        },
 
+        openCamera() {
+            this.camera = true;
+            this.closeSection('camera');
         },
 
         openInformation() {
@@ -58,74 +63,91 @@ function mainFunction() {
             this.closeSection('augmentation');
         },
 
-        openHome(currentSection){
+        openHome(currentSection) {
             this.homePage = true;
-            if(currentSection == "account"){               
+            if (currentSection == "account") {
                 this.account = false;
-            }else if(currentSection == "classification"){
+            } else if (currentSection == "classification") {
                 this.classification = false;
-            }else if(currentSection == "segmentation"){
+            } else if (currentSection == "segmentation") {
                 this.segmentation = false;
-            }else if(currentSection == "image3D"){
+            } else if (currentSection == "image3D") {
                 this.image3D = false;
-            }else if(currentSection == "information"){
+            } else if (currentSection == "information") {
                 this.information = false;
-            }else if(currentSection == "augmentation"){
+            } else if (currentSection == "augmentation") {
                 this.augmentation = false;
-            }else{
+            }else if (currentSection == "camera") {
+                this.camera = false;
+            }  else {
                 console.log('section could not be found')
             }
         },
 
-        closeSection(openSection){
-            if(openSection == "account"){               
+        closeSection(openSection) {
+            if (openSection == "account") {
                 this.segmentation = false;
                 this.classification = false;
                 this.image3D = false;
                 this.information = false;
                 this.homePage = false;
                 this.augmentation = false;
-            }else if(openSection == "classification"){
+                this.camera = false;
+            } else if (openSection == "classification") {
                 this.segmentation = false;
                 this.account = false;
                 this.image3D = false;
                 this.information = false;
                 this.homePage = false;
                 this.augmentation = false;
-            }else if(openSection == "segmentation"){
+                this.camera = false;
+            } else if (openSection == "segmentation") {
                 this.classification = false;
                 this.account = false;
                 this.image3D = false;
                 this.information = false;
                 this.homePage = false;
                 this.augmentation = false;
-            }else if(openSection == "image3D"){
+                this.camera = false;
+            } else if (openSection == "image3D") {
                 this.segmentation = false;
                 this.account = false;
                 this.classification = false;
                 this.information = false;
                 this.homePage = false;
                 this.augmentation = false;
-            }else if(openSection == "information"){
+                this.camera = false;
+            } else if (openSection == "information") {
                 this.segmentation = false;
                 this.account = false;
                 this.image3D = false;
                 this.image3D = false;
                 this.homePage = false;
                 this.augmentation = false;
-            }else if(openSection == "augmentation"){
+                this.camera = false;
+            } else if (openSection == "augmentation") {
                 this.segmentation = false;
                 this.account = false;
                 this.image3D = false;
                 this.information = false;
                 this.homePage = false;
                 this.classification = false;
-            }else{
+                this.camera = false;
+            }else if (openSection == "camera") {
+                this.segmentation = false;
+                this.account = false;
+                this.image3D = false;
+                this.information = false;
+                this.homePage = false;
+                this.classification = false;
+                this.augmentation = false;            
+            } else {
                 console.log('section could not be found')
             }
-
         }
-
     };
-
 }
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('mainFunction', AlpineMainFunction)
+})

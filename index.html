@@ -30,10 +30,12 @@
                 <form x-on:submit.prevent="this.username, this.password" class="form">
                     <input class="un " type="text" text-align="center" x-model="username" placeholder="Username">
                     <input class="pass" type="password" text-align="center" x-model="password" placeholder="Password">
-                    <br>
-                    <button type="submit" @click="authentication" class="submit" text-align="center">Sign in</button>
-                    <br>
-                    <button type="submit" class="forgot" text-align="center">Forgot Password?</button>
+                    <div>
+                        &nbsp;<button type="submit" @click="authentication" class="submit" text-align="center">Sign
+                            in</button>
+                        <br>
+                        <button type="submit" class="forgot" text-align="center">Forgot Password?</button>
+                    </div>
                 </form>
             </div>
 
@@ -48,11 +50,12 @@
                 <button @click="toggle = !toggle"><img src="images/menu.png" alt="menu-icon" width="45px"></button>
             </div>
             <div x-show="toggle" class="toggle">
-                <button @click="">
-                    Camera
-                </button>
+
+                <button type="submit" @click="openAccount"><img src="images/account.jpg" alt="account"
+                        width="35px"><p>Account</p></button>
+
                 <button class="logout" @click="LoggingOut">
-                    logout
+                    <h3>logout</h3>
                 </button>
             </div>
             <img class="banner" src="images/header.png" alt="header" width="100%">
@@ -61,9 +64,9 @@
         <main>
             <div class="row">
                 <div class="col-xs-6 col-md-3">
-                    <button type="submit" @click="openAccount">
-                        <img class="button" src="images/account.jpg" alt="account">
-                        <p>Account</p>
+                    <button id="cameraButton" type="submit" @click="openCamera">
+                        <img class="button" src="images/camera.jpg" alt="camera">
+                        <p>Camera</p>
                     </button>
 
                 </div>
@@ -97,52 +100,51 @@
                     </button>
                 </div>
                 <div class="col-xs-6">
-                    <button type="submit" @click="openAugmentation">
+                    <button id="augButton" type="submit" @click="openAugmentation">
                         <img class="button" src="images/augmented.jpg" alt="augmented">
                         <p>Augmented Reality</p>
                     </button>
                 </div>
-            </div>
 
-            <div class="hospitals">
-                <h2>Specialist Availability</h2>
-                <div class="row hospital">
-                    <div class="col-md-6 logo">
-                        <img src="images/doctor.png" alt="logo" width="96px" height="96px">
+                <div class="hospitals">
+                    <h2>Specialist Availability</h2>
+                    <div class="row hospital">
+                        <div class="col-md-6 logo">
+                            <img src="images/doctor.png" alt="logo" width="96px" height="96px">
+                        </div>
+                        <div class="col-md-6 info">
+                            <div class="title">Dr Hassan Ssemambo</div>
+
+                            <div class="location">Soweto Municipal Hospital</div>
+
+                            <div class="consult">0500-2200 hours</div>
+
+                        </div>
                     </div>
-                    <div class="col-md-6 info">
-                        <div class="title">Dr Hassan Ssemambo</div>
-
-                        <div class="location">Soweto Municipal Hospital</div>
-
-                        <div class="consult">0500-2200 hours</div>
-
+                    <div class="row hospital">
+                        <div class="col-md-6 logo">
+                            <img src="images/doctor.png" alt="logo" width="96px" height="96px">
+                        </div>
+                        <div class="col-md-6 info">
+                            <div class="title"> Dr Kabugo Timothy</div>
+                            <div class="location">Pretoria Referal Hospital</div>
+                            <div class="consult">0500-2300 hours</div>
+                        </div>
                     </div>
+
+                    <div class="row hospital">
+                        <div class="col-md-6 logo">
+                            <img src="images/doctor.png" alt="logo" width="96px" height="96px">
+                        </div>
+                        <div class="col-md-6 info">
+                            <div class="title"> Dr Nantongo Josephine</div>
+                            <div class="location">Midrand Referal Hospital</div>
+                            <div class="consult">0500-2300 hours</div>
+                        </div>
+                    </div>
+
+
                 </div>
-                <div class="row hospital">
-                    <div class="col-md-6 logo">
-                        <img src="images/doctor.png" alt="logo" width="96px" height="96px">
-                    </div>
-                    <div class="col-md-6 info">
-                        <div class="title"> Dr Kabugo Timothy</div>
-                        <div class="location">Pretoria Referal Hospital</div>
-                        <div class="consult">0500-2300 hours</div>
-                    </div>
-                </div>
-
-                <div class="row hospital">
-                    <div class="col-md-6 logo">
-                        <img src="images/doctor.png" alt="logo" width="96px" height="96px">
-                    </div>
-                    <div class="col-md-6 info">
-                        <div class="title"> Dr Nantongo Josephine</div>
-                        <div class="location">Midrand Referal Hospital</div>
-                        <div class="consult">0500-2300 hours</div>
-                    </div>
-                </div>
-
-
-            </div>
 
         </main>
 
@@ -174,8 +176,8 @@
             <span class="title">3D IMAGING</span>
         </div>
         <div id="aSide">
-            <model-viewer src="models/scene.gltf" alt="Lung Cancer model" auto-rotate camera-controls ar
-                ios-src="models/scene.gltf">
+            <model-viewer src="model_3D/scene.gltf" alt="Lung Cancer model" auto-rotate camera-controls ar
+                ios-src="model_3D/scene.gltf">
             </model-viewer>
         </div>
 
@@ -188,12 +190,49 @@
     </section>
 
     <!-- section for Augmented Reality -->
-    <section x-show="login&&augmentation">
-        <h2>Augmented Reality Concepts</h2>
-        <button type="submit" @click="openHome('augmentation')">Home</button>
+    <section class="augmenting" x-show="login&&augmentation">
+        <div>
+            <span class="title">Augmented Reality Concepts</span>
+            <button id="augHome" class="home" type="submit" @click="openHome('augmentation')">Home</button>
+        </div>
+        <div class="video">
+            <canvas id="myCanvas"></canvas>
+            <div class="smallVideo">
+                <div class="augment">
+                    <model-viewer src="model_Augment/scene.gltf" alt="left&right lungs" auto-rotate camera-controls ar
+                        ios-src="model_Augment/scene.gltf">
+                    </model-viewer>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section for Camera -->
+    <section class="camering" x-show="login&&camera">
+        <div>
+            <span class="title">Camera</span>
+            <button class="home" type="submit" @click="openHome('camera')">Home</button>
+        </div>
+
+        <div class="contentarea">
+            <div class="centerImg">
+                <div class="camera">
+                    <video id="video">Video stream not available.</video>
+                    <button id="startbutton">Take photo</button>
+                </div>
+
+                <div><canvas id="canvas"> </canvas></div>
+                <div class="output">
+                    <img id="photo" alt="The screen capture will appear in this box." />
+                </div>
+            </div>
+
+        </div>
     </section>
 
 </body>
 <script src="code.js"></script>
+<script src="videoCode.js"></script>
+<script src="camera.js"></script>
 
 </html>
